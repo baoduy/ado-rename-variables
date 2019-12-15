@@ -1,8 +1,8 @@
 {
   "manifestVersion": 1,
   "id": "remaneVariables",
-  "version": "0.0.3",
-  "name": "Rename variables by find and replace characters",
+  "version": "0.0.4",
+  "name": "Rename variables by find and replace the characters",
   "description": "Rename variables by find and replace characters. Cross platform (work on Windows/Linux/Mac)",
   "publisher": "Duy",
   "icons": {
@@ -25,7 +25,7 @@
   },
   "repository": {
     "type": "git",
-    "uri": "https://github.com/shayki5/azure-devops-print-all-variables"
+    "uri": "https://github.com/baoduy/azure-devops-rename-variables"
   },
   "files": [
     {
