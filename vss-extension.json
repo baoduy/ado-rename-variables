@@ -1,0 +1,45 @@
+{
+  "manifestVersion": 1,
+  "id": "remaneVariables",
+  "version": "0.0.1",
+  "name": "Rename all variables by find and replace characters",
+  "description": "Rename all variables by find and replace characters. Cross platform (work on Windows/Linux/Mac)",
+  "publisher": "Duy Hoang",
+  "icons": {
+    "default": "static/images/icon.png"
+  },
+  "targets": [
+    {
+      "id": "Microsoft.VisualStudio.Services"
+    }
+  ],
+  "tags": ["Azure Pipelines"],
+  "categories": ["Azure Pipelines"],
+  "content": {
+    "license": {
+      "path": "license.md"
+    },
+    "details": {
+      "path": "README.md"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "uri": "https://github.com/shayki5/azure-devops-print-all-variables"
+  },
+  "files": [
+    {
+      "path": "remaneVariables"
+    }
+  ],
+  "contributions": [
+    {
+      "id": "remaneVariables",
+      "targets": ["ms.vss-distributed-task.tasks"],
+      "type": "ms.vss-distributed-task.task",
+      "properties": {
+        "name": "remaneVariables"
+      }
+    }
+  ]
+}
