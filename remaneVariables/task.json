@@ -1,9 +1,9 @@
 {
   "id": "1f1d8f0b-8781-4ac4-aed1-0d51ed3bf95f",
   "name": "remaneVariables",
-  "friendlyName": "Print all variables",
-  "description": "Print to the screen all the available varaibles and their values for this job. Cross platform (work on Windows/Linux/Mac)",
-  "helpMarkDown": "[More Information](https://github.com/shayki5/azure-devops-print-all-variables)",
+  "friendlyName": "Rename variables by replacing the characters in it name",
+  "description": "Rename variables by replacing the characters in it name. Cross platform (work on Windows/Linux/Mac)",
+  "helpMarkDown": "[More Information](https://github.com/baoduy/azure-devops-rename-variables)",
   "category": "Utility",
   "visibility": ["Build", "Release"],
   "author": "",
@@ -12,6 +12,16 @@
     "Minor": 0,
     "Patch": 0
   },
-  "instanceNameFormat": "Print all variables",
+  "instanceNameFormat": "Rename variables",
+  "inputs": [
+    {
+      "name": "replaceInput",
+      "type": "string",
+      "label": "Replaces",
+      "defaultValue": "- => _",
+      "required": true,
+      "helpMarkDown": "Place each replace pattern on difference lines. Ex '- => _', it will repalce all hyphen (-) by underscore (_)"
+    }
+  ],
   "execution": { "Node": { "target": "remaneVariables.js" } }
 }

@@ -1,17 +1,21 @@
 {
+  "name": "vstsexttask",
+  "private": true,
+  "version": "0.0.1",
   "scripts": {
-    "package": "npm run clean  && npm run compile  && tfx extension create  --rev-version",
+    "package": "npm run clean  && npm run compile  && tfx extension create --rev-version",
     "gallery-publish": "tfx extension publish --rev-version",
     "clean": "rimraf ./*.vsix",
     "compile": "tsc -p .",
-    "install-task-lib": "cd remaneVariables && npm install --save-dev"
+    "install-lib": "cd remaneVariables && npm install",
+    "test": "npm run compile && mocha remaneVariables/tests/_suite.js",
+    "update": "ncu -u"
   },
   "devDependencies": {
-    "@types/node": "^8.0.7",
+    "@types/mocha": "^5.2.7",
+    "@types/node": "^12.12.17",
+    "sync-request": "^6.1.0",
     "tfx-cli": "^0.7.11",
-    "typescript": "2.3.4"
-  },
-  "name": "vstsexttask",
-  "private": true,
-  "version": "0.0.1"
+    "typescript": "3.7.3"
+  }
 }
