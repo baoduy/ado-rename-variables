@@ -16,7 +16,7 @@
   "inputs": [
     {
       "name": "replaceInput",
-      "type": "string",
+      "type": "multiLine",
       "label": "Replaces",
       "defaultValue": "- => : ",
       "required": true,
