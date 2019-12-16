@@ -18,9 +18,9 @@
       "name": "replaceInput",
       "type": "string",
       "label": "Replaces",
-      "defaultValue": "- => _",
+      "defaultValue": "- => : ",
       "required": true,
-      "helpMarkDown": "Place each replace pattern on difference lines. Ex '- => _', it will replace all hyphen (-) by underscore (_)"
+      "helpMarkDown": "Place each replace pattern on difference lines. Ex '- => : ', it will replace all Hyphen (-) by Colon (:)"
     }
   ],
   "execution": { "Node": { "target": "remaneVariables.js" } }
