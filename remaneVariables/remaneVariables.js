@@ -10,7 +10,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const tl = require("vsts-task-lib/task");
-const parsePattern = (p) => {
+exports.parsePattern = (p) => {
     if (!p || !p.includes("=>"))
         return undefined;
     const s = p.split("=>");
@@ -21,11 +21,11 @@ const parsePattern = (p) => {
         return undefined;
     return pattern;
 };
-const replace = (input, patterns) => {
+exports.replace = (input, patterns) => {
     patterns.forEach(p => {
         if (!p)
             return;
-        input = input.replace(p.from, p.to);
+        input = input.split(p.from).join(p.to);
     });
     return input;
 };
@@ -48,14 +48,14 @@ function run() {
             const replaces = tl
                 .getInput("replaceInput", true)
                 .split("\n")
-                .map(parsePattern);
+                .map(exports.parsePattern);
             console.log(replaces);
             //Remane variables
             sortedArray.forEach(element => {
                 const oldName = element.name;
-                const newName = replace(element.name, replaces);
+                const newName = exports.replace(element.name, replaces);
                 if (oldName === newName) {
-                    console.log(`${newName} was skipped.`);
+                    console.log(`${newName} was skipped as the new name is the same.`);
                     return;
                 }
                 tl.setVariable(newName, element.value, element.secret);

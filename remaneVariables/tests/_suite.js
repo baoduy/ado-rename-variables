@@ -3,6 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const assert = require("assert");
 const path = require("path");
 const ttm = require("azure-pipelines-task-lib/mock-test");
+const remaneVariables_1 = require("../remaneVariables");
 describe("Sample task tests", function () {
     before(function () { });
     after(() => { });
@@ -17,5 +18,13 @@ describe("Sample task tests", function () {
     });
     it("it should fail if tool returns 1", function (done) {
         // Add failure test here
+        done();
+    });
+    it("it should replace all characters", function (done) {
+        this.timeout(100);
+        const rs = remaneVariables_1.replace("A-B-C-D", [{ from: "-", to: ":" }]);
+        assert.equal(rs.includes("-"), false, "should not contains hyphone (-) characters");
+        assert.equal(rs.includes(":"), true, "should be replaced by (:) characters");
+        done();
     });
 });

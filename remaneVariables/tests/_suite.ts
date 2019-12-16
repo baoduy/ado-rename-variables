@@ -2,6 +2,9 @@ import * as assert from "assert";
 import * as path from "path";
 import * as ttm from "azure-pipelines-task-lib/mock-test";
 
+import { race } from "q";
+import { replace } from "../remaneVariables";
+
 describe("Sample task tests", function() {
   before(function() {});
 
@@ -23,5 +26,17 @@ describe("Sample task tests", function() {
 
   it("it should fail if tool returns 1", function(done: MochaDone) {
     // Add failure test here
+    done();
+  });
+
+  it("it should replace all characters", function(done: MochaDone) {
+    this.timeout(100);
+
+    const rs = replace("A-B-C-D", [{ from: "-", to: ":" }]);
+
+    assert.equal(rs.includes("-"), false, "should not contains hyphone (-) characters");
+    assert.equal(rs.includes(":"), true, "should be replaced by (:) characters");
+
+    done();
   });
 });

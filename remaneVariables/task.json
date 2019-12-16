@@ -10,7 +10,7 @@
   "version": {
     "Major": 1,
     "Minor": 0,
-    "Patch": 0
+    "Patch": 1
   },
   "instanceNameFormat": "Rename variables",
   "inputs": [
@@ -20,7 +20,7 @@
       "label": "Replaces",
       "defaultValue": "- => _",
       "required": true,
-      "helpMarkDown": "Place each replace pattern on difference lines. Ex '- => _', it will repalce all hyphen (-) by underscore (_)"
+      "helpMarkDown": "Place each replace pattern on difference lines. Ex '- => _', it will replace all hyphen (-) by underscore (_)"
     }
   ],
   "execution": { "Node": { "target": "remaneVariables.js" } }

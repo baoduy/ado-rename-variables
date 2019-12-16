@@ -5,7 +5,7 @@ interface ReplacePattern {
   to: string;
 }
 
-const parsePattern = (p: string): ReplacePattern | undefined => {
+export const parsePattern = (p: string): ReplacePattern | undefined => {
   if (!p || !p.includes("=>")) return undefined;
   const s = p.split("=>");
   if (s.length != 2) return undefined;
@@ -16,10 +16,10 @@ const parsePattern = (p: string): ReplacePattern | undefined => {
   return pattern;
 };
 
-const replace = (input: string, patterns: ReplacePattern[]): string => {
+export const replace = (input: string, patterns: ReplacePattern[]): string => {
   patterns.forEach(p => {
     if (!p) return;
-    input = input.replace(p.from, p.to);
+    input = input.split(p.from).join(p.to);
   });
 
   return input;
@@ -55,7 +55,7 @@ async function run() {
       const newName = replace(element.name, replaces);
 
       if (oldName === newName) {
-        console.log(`${newName} was skipped.`);
+        console.log(`${newName} was skipped as the new name is the same.`);
         return;
       }
 
