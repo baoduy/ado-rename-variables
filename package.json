@@ -1,7 +1,7 @@
 {
   "name": "vstsexttask",
   "private": true,
-  "version": "0.0.1",
+  "version": "latest",
   "scripts": {
     "package": "npm run clean  && npm run compile  && tfx extension create --rev-version",
     "publish": "tfx extension publish --no-wait-validation --token $token",
