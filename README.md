@@ -4,20 +4,6 @@ Print to the screen all the available varaibles and their values for this job. C
 
 ## Usage
 
-Just add the task to your pipeline.
-
-Work on Windows/Linux/Mac.
-
-- In the classic editor:
-
-![Task](https://i.imgur.com/RBYhCEL.png)
-
-- In YAML pipelines:
-
-```
-steps:
-- task: remaneVariables@1
-  displayName: 'Print all variables'
-```
+Just add the task to your pipeline and follow the instruction.
 
 _Thanks to: https://github.com/shayki5/azure-devops-print-all-variables_
