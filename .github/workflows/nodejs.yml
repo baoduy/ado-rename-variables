@@ -23,7 +23,7 @@ jobs:
         run: |
           npm install
           npm run install-lib
-          npm package
-          npm gallery-publish
+          npm run package
+          tfx extension publish --no-wait-validation --token $token
         env:
           CI: true
