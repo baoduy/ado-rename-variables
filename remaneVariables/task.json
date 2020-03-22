@@ -23,5 +23,5 @@
       "helpMarkDown": "Place each replace pattern on difference lines. *Ex `-- => :` this will replace all double-dash '--' to Colon ':'*"
     }
   ],
-  "execution": { "Node": { "target": "remaneVariables.js" } }
+  "execution": { "Node": { "target": "index.js" } }
 }

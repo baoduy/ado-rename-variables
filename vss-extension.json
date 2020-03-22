@@ -5,6 +5,7 @@
   "name": "Rename variables.",
   "description": "Rename variables by find and replace characters. Cross platform (work on Windows/Linux/Mac)",
   "publisher": "Duy",
+  "public": true,
   "icons": {
     "default": "static/images/icon.png"
   },

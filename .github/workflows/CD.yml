@@ -24,6 +24,6 @@ jobs:
           npm install
           npm run install-lib
           npm run package
-          tfx extension publish --no-wait-validation --token $token
+          npm run publish
         env:
           CI: true
