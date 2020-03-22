@@ -1,4 +1,4 @@
-import tl = require("vsts-task-lib/task");
+import * as tl from 'vsts-task-lib/task';
 
 interface ReplacePattern {
   from: string;
@@ -6,8 +6,8 @@ interface ReplacePattern {
 }
 
 export const parsePattern = (p: string): ReplacePattern | undefined => {
-  if (!p || !p.includes("=>")) return undefined;
-  const s = p.split("=>");
+  if (!p || !p.includes('=>')) return undefined;
+  const s = p.split('=>');
   if (s.length != 2) return undefined;
 
   const pattern: ReplacePattern = { from: s[0].trim(), to: s[1].trim() };
@@ -30,7 +30,7 @@ async function run() {
     //Get variables
     const allVariables = tl.getVariables();
     //short by name
-    var sortedArray: tl.VariableInfo[] = allVariables.sort((obj1, obj2) => {
+    var sortedArray = allVariables.sort((obj1, obj2) => {
       if (obj1.name > obj2.name) {
         return 1;
       }
@@ -43,11 +43,11 @@ async function run() {
 
     //input
     const replaces = tl
-      .getInput("replaceInput", true)
-      .split("\n")
+      .getInput('replaceInput', true)
+      .split('\n')
       .map(parsePattern);
 
-    console.log(replaces);
+    console.log('Replace patterns:', replaces);
 
     //Remane variables
     sortedArray.forEach(element => {
@@ -55,7 +55,7 @@ async function run() {
       const newName = replace(element.name, replaces);
 
       if (oldName === newName) {
-        console.log(`${newName} was skipped as the new name is the same.`);
+        //console.log(`${newName} was skipped as the new name is the same.`);
         return;
       }
 
@@ -63,7 +63,7 @@ async function run() {
       console.log(`Rename ${oldName} => ${newName}`);
     });
 
-    tl.setResult(tl.TaskResult.Succeeded, "", true);
+    tl.setResult(tl.TaskResult.Succeeded, '', true);
   } catch (err) {
     tl.setResult(tl.TaskResult.Failed, err.message);
   }

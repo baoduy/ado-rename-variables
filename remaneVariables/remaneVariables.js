@@ -11,9 +11,9 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 const tl = require("vsts-task-lib/task");
 exports.parsePattern = (p) => {
-    if (!p || !p.includes("=>"))
+    if (!p || !p.includes('=>'))
         return undefined;
-    const s = p.split("=>");
+    const s = p.split('=>');
     if (s.length != 2)
         return undefined;
     const pattern = { from: s[0].trim(), to: s[1].trim() };
@@ -46,22 +46,22 @@ function run() {
             });
             //input
             const replaces = tl
-                .getInput("replaceInput", true)
-                .split("\n")
+                .getInput('replaceInput', true)
+                .split('\n')
                 .map(exports.parsePattern);
-            console.log(replaces);
+            console.log('Replace patterns:', replaces);
             //Remane variables
             sortedArray.forEach(element => {
                 const oldName = element.name;
                 const newName = exports.replace(element.name, replaces);
                 if (oldName === newName) {
-                    console.log(`${newName} was skipped as the new name is the same.`);
+                    //console.log(`${newName} was skipped as the new name is the same.`);
                     return;
                 }
                 tl.setVariable(newName, element.value, element.secret);
                 console.log(`Rename ${oldName} => ${newName}`);
             });
-            tl.setResult(tl.TaskResult.Succeeded, "", true);
+            tl.setResult(tl.TaskResult.Succeeded, '', true);
         }
         catch (err) {
             tl.setResult(tl.TaskResult.Failed, err.message);

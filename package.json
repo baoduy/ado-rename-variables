@@ -9,14 +9,14 @@
     "compile": "tsc -p .",
     "install-lib": "cd remaneVariables && npm install",
     "test": "npm run compile && mocha remaneVariables/tests/_suite.js",
-    "update": "ncu -u"
+    "update": "ncu -u && npm install"
   },
   "devDependencies": {
-    "@types/mocha": "^5.2.7",
-    "@types/node": "^12.12.17",
-    "mocha": "^6.2.2",
+    "@types/mocha": "^7.0.2",
+    "@types/node": "^13.9.2",
+    "mocha": "^7.1.1",
     "sync-request": "^6.1.0",
     "tfx-cli": "^0.7.11",
-    "typescript": "3.7.3"
+    "typescript": "3.8.3"
   }
 }
