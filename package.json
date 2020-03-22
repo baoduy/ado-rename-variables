@@ -4,7 +4,8 @@
   "version": "99.99.99",
   "scripts": {
     "package": "npm run clean  && npm run compile  && tfx extension create --rev-version",
-    "publish": "tfx extension publish --no-wait-validation --token $token",
+    "publish": "tfx extension publish --no-wait-validation --token $TOKEN",
+    "publish-local": "tfx extension publish --no-wait-validation",
     "clean": "rimraf ./*.vsix",
     "compile": "tsc -p .",
     "install-lib": "cd remaneVariables && npm install",

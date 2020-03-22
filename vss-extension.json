@@ -1,7 +1,7 @@
 {
   "manifestVersion": 1,
   "id": "remaneVariables",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "name": "Rename variables.",
   "description": "Rename variables by find and replace characters. Cross platform (work on Windows/Linux/Mac)",
   "publisher": "Duy",
