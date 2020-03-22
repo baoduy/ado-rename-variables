@@ -32,7 +32,7 @@ function run() {
                 .split('\n')
                 .map(parsePattern_1.default);
             console.log('Replace patterns:', replaces);
-            //Remane variables
+            //rename variables
             sortedArray.forEach(element => {
                 const oldName = element.name;
                 const newName = replace_1.default(element.name, replaces);

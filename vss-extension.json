@@ -1,7 +1,7 @@
 {
   "manifestVersion": 1,
-  "id": "remaneVariables",
-  "version": "1.0.4",
+  "id": "renameVariables",
+  "version": "1.0.7",
   "name": "Rename variables.",
   "description": "Rename variables by find and replace characters. Cross platform (work on Windows/Linux/Mac)",
   "publisher": "Duy",
@@ -30,16 +30,16 @@
   },
   "files": [
     {
-      "path": "remaneVariables"
+      "path": "renameVariables"
     }
   ],
   "contributions": [
     {
-      "id": "remaneVariables",
+      "id": "renameVariables",
       "targets": ["ms.vss-distributed-task.tasks"],
       "type": "ms.vss-distributed-task.task",
       "properties": {
-        "name": "remaneVariables"
+        "name": "renameVariables"
       }
     }
   ]
