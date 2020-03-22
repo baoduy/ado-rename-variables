@@ -4,6 +4,11 @@ Print to the screen all the available varaibles and their values for this job. C
 
 ## Usage
 
+This extension will allow you to rename/replace the Azure DevOps variables.
+
 Just add the task to your pipeline and follow the instruction.
 
-_Thanks to: https://github.com/shayki5/azure-devops-print-all-variables_
+*https://github.com/baoduy/ado-rename-variables*
+
+Thanks
+drunkcoding@outlook.com
