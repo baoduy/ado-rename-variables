@@ -2,18 +2,17 @@ import * as assert from 'assert';
 import * as path from 'path';
 import * as ttm from 'azure-pipelines-task-lib/mock-test';
 
-import { replace } from '../remaneVariables';
+import replace from '../remaneVariables/replace';
 
 describe('Sample task tests', function() {
   before(function() {});
 
   after(() => {});
 
-  it('should succeed with a replace inputs', function(done: MochaDone) {
-    //this.timeout(3000);
+  it('should succeed with a replace inputs', (done: MochaDone) => {
+    this.timeout(3000);
 
     const tp = path.join(__dirname, 'success.js');
-
     const tr = new ttm.MockTestRunner(tp);
 
     tr.run();
@@ -29,7 +28,7 @@ describe('Sample task tests', function() {
   //   done();
   // });
 
-  it('it should replace all characters', function(done: MochaDone) {
+  it('it should replace all characters', (done: MochaDone) => {
     this.timeout(100);
 
     const rs = replace('A-B-C-D', [{ from: '-', to: ':' }]);
