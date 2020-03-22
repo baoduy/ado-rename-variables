@@ -11,6 +11,7 @@
   "devDependencies": {
     "@types/node": "^13.9.2",
     "@types/q": "1.5.2",
-    "azure-pipelines-task-lib": "^2.9.3"
+    "azure-pipelines-task-lib": "^2.9.3",
+    "minimist": ">=1.2.5"
   }
 }
