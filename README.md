@@ -1,8 +1,12 @@
-# rename All Variables
+# Rename Variables
 
 ![Publish extensions](https://github.com/baoduy/ado-rename-variables/workflows/Publish%20extensions/badge.svg)
 
-Print to the screen all the available varaibles and their values for this job. Cross platform (work on Windows/Linux/Mac).
+Rename the Azure DevOps variables, This really helpfull when you reteiving the variables from Key vault and would like to rename the variable from **Abc--Other** to **Abc:Other** Before substitute variables to your config files. 
+
+
+
+Cross platform (work on Windows/Linux/Mac).
 
 ## Usage
 
