@@ -31,7 +31,7 @@ async function run() {
 
     console.log('Replace patterns:', replaces);
 
-    //Remane variables
+    //rename variables
     sortedArray.forEach(element => {
       const oldName = element.name;
       const newName = replace(element.name, replaces);
