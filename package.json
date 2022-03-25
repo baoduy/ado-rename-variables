@@ -17,7 +17,7 @@
     "@types/mocha": "^7.0.2",
     "@types/node": "^13.9.2",
     "azure-pipelines-task-lib": "^2.9.3",
-    "minimist": ">=1.2.5",
+    "minimist": ">=1.2.6",
     "mocha": "^7.1.1",
     "sync-request": "^6.1.0",
     "tfx-cli": "^0.7.11",
