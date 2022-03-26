@@ -11,6 +11,6 @@
   "devDependencies": {
     "@types/node": "^13.9.2",
     "@types/q": "1.5.2",
-    "minimist": ">=1.2.5"
+    "minimist": ">=1.2.6"
   }
 }
